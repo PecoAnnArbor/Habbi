@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #efefef;
+    position: fixed !important;
+    width: 100%;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    scale: 1.5;
+    object-fit: cover;
+    object-position: center;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.btn.login {
+    border:none;
+    padding-right: auto;
+}
