@@ -1,13 +1,16 @@
 import "./NavBar.css";
 import habbiLogo from '../../assets/habbi_logo_transparent.png';
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light px-5">
-            <img className="navbar-brand logo" src={habbiLogo} alt="Habbi Logo" />
-            {/* <a className="navbar-brand" href="#">Habbi</a> */}
+                <Link to="/">
+                    <img className="navbar-brand logo" src={habbiLogo} alt="Habbi Logo" />
+                </Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
@@ -22,8 +25,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <form className="form-inline my-2 my-lg-0">
-                    <button className="btn my-2 my-sm-0 login" type="submit">Login</button>
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+                    <Link to="/auth" className="btn btn-outline-success my-2 my-sm-0 login" type="button">Login</Link>
                 </form>
             </nav>
         </>
