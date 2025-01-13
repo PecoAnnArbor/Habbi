@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google';
+
 import "./Auth.css";
 
 const Auth = () => {
@@ -10,6 +12,13 @@ const Auth = () => {
         email: "",
         password: "",
     });
+
+    const responseMessage = (response) => {
+        console.log(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
 
     // Handle form input changes
     const handleChange = (e) => {
@@ -88,10 +97,16 @@ const Auth = () => {
                     {isSignUp ? "Log In" : "Sign Up"}
                 </button>
             </p>
+            
+            {/* Google Login */}
+            <div className="google-login">
+                <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            </div>
+
 
             {/* Back to Home */}
             <button className="back-button" onClick={() => navigate("/")}>
-                ⬅ Back to Home
+                ⬅ Back
             </button>
         </div>
     );
